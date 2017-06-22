@@ -1,0 +1,43 @@
+#slider{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-width: 750px;
+    min-height: 1px;
+    margin: 0 auto;
+    background-color: red;
+}
+
+.content{
+    overflow: hidden;
+    min-height: 1px;
+}
+
+.slider-item{
+    float: left;
+}
+.slider-item img{
+    width: 100%;
+    display: block;
+}
+
+#slider .dots{
+    position: absolute;
+    text-align: center;
+    bottom: 10px;
+    width: 100%;
+    height: 20px;
+}
+
+#slider .dots span{
+    display: inline-block;
+    margin: 0 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #EEE;
+}
+
+#slider .dots span.on{
+    background-color: red;
+}
