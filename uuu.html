@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="test" style="width: 200px; height: 200px; background-color: brown"></div>
+</body>
+<script>
+    function myLongPress(target, timeInterval) {
+        var timer;
+        var myEvt = document.createEvent('Event');
+        myEvt .initEvent('longPress', true, true);
+        target.addEventListener('mousedown', function() {
+            timer = Date.now();
+        }, false);
+        target.addEventListener('mouseup', function() {
+            if(Date.now() - timer > timeInterval) {
+                myEvt .interval= Date.now() - timer;
+                target.dispatchEvent(myEvt );
+            }
+        }, false);
+    }
+    myLongPress($('ni'), 2000);
+    $('ni').addEventListener('longPress', function(e) {
+        console.log('您已经摁下了 ' + e.duration + '毫秒了,走神了么.');
+    }, false);
+
+</script>
+</html>
